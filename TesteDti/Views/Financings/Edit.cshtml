@@ -1,0 +1,40 @@
+﻿@model TesteDti.Models.Financing
+
+<h4>Financing</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="DownPayment" class="control-label"></label>
+                <input asp-for="DownPayment" class="form-control" />
+                <span asp-validation-for="DownPayment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstallmentValue" class="control-label"></label>
+                <input asp-for="InstallmentValue" class="form-control" />
+                <span asp-validation-for="InstallmentValue" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="NumberYears" class="control-label"></label>
+                <input asp-for="NumberYears" class="form-control" />
+                <span asp-validation-for="NumberYears" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
